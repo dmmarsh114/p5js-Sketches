@@ -9,18 +9,32 @@ function setup() {
     let canvas = createCanvas(800, 450);
     canvas.parent(document.getElementById('spaceContainer'));
 
-    sun = new Planet(0, 25, 'yellow', random(0, 4));
-    mercury = new Planet(40, 3, 'gray', random(0, 4));
-    venus = new Planet(55, 3, 'orange', random(0, 4));
-    earth = new Planet(75, 7, 'blue', random(0, 4));
-    mars = new Planet(105, 7, 'red', random(0, 4));
-    jupiter = new Planet(150, 15, 'coral', random(0, 4));
-    saturn = new RingedPlanet(200, 10, 'tan', random(0, 4));
-    neptune = new Planet(250, 11, 'indigo', random(0, 4));
-    uranus = new Planet(300, 11, 'lightblue', random(0, 4));
-    pluto = new Planet(350, 2, 'white', random(0, 4));
+    /*
+        Orbital speeds (km/s)
+        M - 48 
+        V - 35
+        E - 30
+        M - 24
+        J - 13
+        S - 10
+        U - 7
+        N - 5
+        P - 5
+    */
 
-    planets.push(mercury, venus, earth, mars, jupiter, saturn, neptune, uranus, pluto);
+    sun = new Planet(0, 20, 'yellow');
+
+    mercury = new Planet(40, 3, 'gray', 0.02);
+    venus = new Planet(55, 3, 'orange', 0.01);
+    earth = new Planet(75, 7, 'blue', 0.012);
+    mars = new Planet(105, 7, 'red', 0.01);
+    jupiter = new Planet(150, 12, 'coral', 0.005);
+    saturn = new RingedPlanet(200, 9, 'tan', 0.004);
+    uranus = new Planet(300, 9, 'lightblue', 0.003);
+    neptune = new Planet(250, 9, 'indigo', 0.0025);
+    pluto = new Planet(350, 2, 'white', 0.0025);
+
+    planets.push(mercury, venus, earth, mars, jupiter, saturn, uranus, neptune, pluto);
 }
 
 function draw() {
@@ -28,8 +42,8 @@ function draw() {
     background(0);
     noStroke();
     ellipseMode(CENTER);
-
     translate(width / 2, height / 2);
+
     sun.show();
 
     for (let i of planets) {
