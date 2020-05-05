@@ -1,38 +1,26 @@
-let solarSystem = [];
+let planets = [];
 
 let sun;
 let mercury, venus, earth, mars;
 let jupiter, saturn, neptune, uranus;
 let pluto;
 
-let asteroids = [];
-
 function setup() {
     let canvas = createCanvas(800, 450);
     canvas.parent(document.getElementById('spaceContainer'));
 
-    let centerY = height / 2;
+    sun = new Planet(0, 25, 'yellow', random(0, 4));
+    mercury = new Planet(40, 3, 'gray', random(0, 4));
+    venus = new Planet(55, 3, 'orange', random(0, 4));
+    earth = new Planet(75, 7, 'blue', random(0, 4));
+    mars = new Planet(105, 7, 'red', random(0, 4));
+    jupiter = new Planet(150, 15, 'coral', random(0, 4));
+    saturn = new RingedPlanet(200, 10, 'tan', random(0, 4));
+    neptune = new Planet(250, 11, 'indigo', random(0, 4));
+    uranus = new Planet(300, 11, 'lightblue', random(0, 4));
+    pluto = new Planet(350, 2, 'white', random(0, 4));
 
-    sun = new Planet(0, centerY, 80, 'yellow');
-    mercury = new Planet(100, centerY, 3, 'gray');
-    venus = new Planet(120, centerY, 5, 'orange');
-    earth = new Planet(140, centerY, 7, 'blue');
-    mars = new Planet(160, centerY, 6, 'red');
-    jupiter = new Planet(300, centerY, 17, 'coral');
-    saturn = new Planet(410, centerY, 10, 'tan', true);
-    neptune = new Planet(515, centerY, 12, 'darkblue');
-    uranus = new Planet(620, centerY, 12, 'lightblue');
-    pluto = new Planet(750, centerY, 2, 'white');
-
-    // add only the planets to solarSystem
-    solarSystem.push(mercury, venus, earth, mars, jupiter, saturn, neptune, uranus, pluto);
-
-    for (let i = 0; i < 30; i++) {
-        let newAsteroid =
-            new Planet(220 + random(-10, 10), random(30, height - 30), 2, 'brown');
-        asteroids.push(newAsteroid);
-    }
-
+    planets.push(mercury, venus, earth, mars, jupiter, saturn, neptune, uranus, pluto);
 }
 
 function draw() {
@@ -41,13 +29,11 @@ function draw() {
     noStroke();
     ellipseMode(CENTER);
 
-    sun.display();
+    translate(width / 2, height / 2);
+    sun.show();
 
-    for (let i of solarSystem) {
-        i.orbit(sun);
-        i.display();
+    for (let i of planets) {
+        i.orbit();
+        i.show();
     }
-
-    // asteroid belt
-    // asteroids.forEach(asteroid => asteroid.display());
 }
