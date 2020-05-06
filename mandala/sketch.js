@@ -4,6 +4,8 @@ let a = 0;
 let rate = 1;
 let mainRate = .25;
 
+let mandalaDesigns = [];
+
 function setup() {
     let canvas = createCanvas(500, 500);
     canvas.parent(document.getElementById('artContainer'));
