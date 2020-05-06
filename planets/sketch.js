@@ -51,3 +51,7 @@ function draw() {
         i.show();
     }
 }
+
+function mousePressed() {
+
+}
