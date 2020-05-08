@@ -36,6 +36,7 @@ function resetSketch() {
 
 function drawLine(num, x, y) {
     stroke(255);
+    noFill();
     if (num > chance) {
         // lean forward
         line(x, tileSize + y, tileSize + x, y);
