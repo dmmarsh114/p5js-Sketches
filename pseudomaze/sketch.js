@@ -4,6 +4,12 @@ let chance;
 
 let lineNumbers = [];
 
+/*
+   ~~ TODO ~~
+   reset function redraws maze with set params
+   
+*/
+
 function setup() {
     let canvas = createCanvas(800, 400);
     canvas.parent(document.getElementById('artContainer'));
