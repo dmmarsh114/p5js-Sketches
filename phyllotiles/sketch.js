@@ -15,7 +15,8 @@ let size = 2;
 function setup() {
     let canvas = createCanvas(500, 500);
     canvas.parent(document.getElementById('artContainer'));
-    background(100, 100, 100);
+    // background(100, 100, 100);
+    background(0);
 
     let button = createButton('Download');
     button.mousePressed(function () {
@@ -56,7 +57,8 @@ function draw() {
                 let x = (r * cos(a));
                 let y = (r * sin(a));
 
-                fill((i + 50) % 256, (j + 50) % 256, n % 256);
+                fill((i + 150) % 256, (j + 150) % 256, n % 256);
+                // fill(i % 256, 255, 255);
                 noStroke();
                 ellipse(x, y, size);
 
