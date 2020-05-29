@@ -37,8 +37,8 @@ function grow() {
     // add two branches off of each branch
     for (let i = tree.length - 1; i >= 0; i--) {
       if (!tree[i].grown) {
-        tree.push(tree[i].newBranch(PI / random(3, 7)));
-        tree.push(tree[i].newBranch(-PI / random(3, 7)));
+        tree.push(tree[i].newBranch(PI / random(3, 10)));
+        tree.push(tree[i].newBranch(-PI / random(3, 10)));
       }
       tree[i].grown = true;
     }

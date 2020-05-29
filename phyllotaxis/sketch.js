@@ -32,6 +32,7 @@ function setup() {
     angleMode(DEGREES);
 
     angleFactor = random(-0.5, 0.5);
+    // angleFactor = -0.2;
     console.log(137.5 + angleFactor);
 }
 
@@ -54,7 +55,7 @@ function draw() {
     // fill(n % 256, n % 256, n % 255);
     // fill(n % 256, n % 256, n);
     // fill(255 - n, n % 256, n);
-    fill(n % 256, 255, n / 4);
+    fill(n % 360, 100, n / 4);
     // fill(255);
 
     ellipse(x, y, size, size);

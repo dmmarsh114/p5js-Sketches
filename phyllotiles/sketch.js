@@ -34,9 +34,9 @@ function draw() {
     for (let i = 0; i < width; i += spacing) {
         for (let j = 0; j < height; j += spacing) {
             // draw tiles
-            fill(0);
-            stroke(255);
-            ellipse(i, j, spacing);
+            // fill(0);
+            // stroke(255);
+            // ellipse(i, j, spacing);
 
             // draw spirals
             push();
