@@ -15,7 +15,7 @@ function setup() {
 }
 
 function drawSquares(c, d) {
-    rect(c, d, tileSize);
+    // rect(c, d, tileSize);
     for (let k = 0; k <= 15; k++) {
         if (k > 1) {
             rotate(a);
