@@ -13,15 +13,18 @@
 
         #parent {
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            align-items: center;
-            flex-flow: column;
-            padding-top: 10px;
         }
 
         #artContainer {
-            width: 800px;
-            height: 400px;
+            height: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #button {
+            margin-left: 50%;
         }
     </style>
 </head>
@@ -29,6 +32,7 @@
 <body>
     <div id='parent'>
         <div id='artContainer'></div>
+        <div id='button'></div>
     </div>
 
 
