@@ -2,7 +2,7 @@ function Particle() {
     this.pos = createVector(random(width), random(height));
     this.velocity = createVector(0, 0);
     this.accl = createVector(0, 0);
-    this.maxSpeed = 4;
+    this.maxSpeed = 5;
 
     this.prevPos = this.pos.copy();
 
